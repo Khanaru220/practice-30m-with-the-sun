@@ -19,6 +19,7 @@
 
 - `update`
 - `docs`
+- `fix`
 - (e.g.) `update_CSS add dark mode`
 
 2. Prefer using space (` `) for description
