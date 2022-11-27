@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;800&display=swap');
+
+:root {
+	--gallery-gap: 10px;
+	/* don't need 2 cols, double-sized col is non-sens in that  */
+	--width-in-3-cols: 33.3%;
+	--width-in-4-cols: 25%;
+}
+
+body {
+	background: #ffa17f; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to top,
+		#00223e,
+		#ffa17f
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to top,
+		#00223e,
+		#ffa17f
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+	text-align: center;
+	font-size: 60px;
+	font-weight: 600;
+	font-family: Alexandria, sans-serif;
+	background: -webkit-linear-gradient(
+		121deg,
+		rgba(242, 202, 139, 1) 0%,
+		rgba(255, 255, 255, 1) 53%,
+		rgba(242, 202, 139, 1) 100%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gallery {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gallery-gap);
+	max-width: 800px;
+}
+.gallery_row {
+	display: flex;
+	justify-content: center;
+	gap: var(--gallery-gap);
+}
+
+.gallery_row--3-cols .gallery_element {
+	flex-basis: var(--width-in-3-cols);
+}
+
+.gallery_row--3-cols .gallery_element--double-width {
+	flex-basis: calc(
+		var(--width-in-3-cols) * 2 + var(--gallery-gap)
+	); /*fix flex-grow not equal when use flex-gap*/
+}
+
+.gallery_row--4-cols .gallery_element {
+	flex-basis: var(--width-in-4-cols);
+}
+
+.gallery_row--4-cols .gallery_element--double-width {
+	flex-basis: calc(var(--width-in-4-cols) * 2 + var(--gallery-gap));
+}
+
+.gallery_element {
+	margin: 0;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.gallery_element img {
+	width: 100%; /* shrink down with flex-item */
+	height: 100%;
+	vertical-align: top; /* fix small space at bottom in block*/
+}
