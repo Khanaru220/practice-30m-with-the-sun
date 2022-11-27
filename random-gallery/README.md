@@ -9,3 +9,7 @@
 - CSS gradient background: https://cssgradient.io/gradient-backgrounds/
 - Text gradient: https://cssgradient.io/blog/css-gradient-text/
 - Randpm pic URL: https://picsum.photos/
+
+## Preview
+
+![Preview screenshot of project](./preview.png)
